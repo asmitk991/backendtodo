@@ -8,8 +8,8 @@
 }
 
 .progressCircle {
-  --primary: #369;
-  --secondary: #adf;
+  --primary: rgb(44, 149, 6);
+  --secondary: rgb(166, 241, 163);
   --size: 150px;
   width: var(--size);
   aspect-ratio: 1;
