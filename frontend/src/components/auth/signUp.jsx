@@ -13,7 +13,6 @@ const SignUpPage = () => {
     password: "",
   });
 
-  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,13 +31,9 @@ const SignUpPage = () => {
         // If the signup is successful, switch to the SignIn page or perform any action
         notify("Account created Successfully", "success");
         setNewUser(false);
-      } else {
-        const errorData = await response.json();
-        setErrorMessage(errorData.error || "Signup failed. Please try again.");
       }
     } catch (error) {
       console.error("Error during signup:", error);
-      setErrorMessage("An error occurred. Please try again later.");
     }
     setLoading(false);
   };
