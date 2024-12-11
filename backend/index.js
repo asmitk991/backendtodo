@@ -4,17 +4,16 @@ require("dotenv").config();
 require("./Models/db");
 const PORT = process.env.PORT || 8080;
 const TaskRouter = require("./Routes/TaskRouter");
-const bodyParser = require("body-parser");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("./Models/userModel");
+app.use(cors());
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Hello from the server");
 });
-app.use(cors());
-app.use(bodyParser.json());
 app.use("/tasks", TaskRouter);
 
 app.post("/signup", async (req, res) => {
